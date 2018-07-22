@@ -11,7 +11,7 @@
 #define __FILENAME__ (strrchr(__FILE__, '/') ? strrchr(__FILE__, '/') + 1 : __FILE__)
 #endif
 
-//#define __LOGGING_FILE_LINE_
+#define __LOGGING_FILE_LINE_
 
 namespace logging = boost::log;
 

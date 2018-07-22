@@ -3,9 +3,11 @@
 #include <boost/log/core.hpp>
 #include <boost/log/trivial.hpp>
 #include <boost/filesystem.hpp>
+#include <thread>
+#include "thread_log.h"
 
 namespace fs = boost::filesystem;
-static logging::sources::severity_logger<boost::log::trivial::severity_level> mLogger;
+static logging::sources::severity_logger_mt<boost::log::trivial::severity_level> mLogger;
 
 int main()
 {
@@ -20,6 +22,8 @@ int main()
     BST_LOG_FATAL(mLogger) << "a fatal message";
 
     //set_logging_level(logging::trivial::info);
+    std::thread thd(&thread_log);
+    
 
     int c =100000;
     while(c-- >0) {
@@ -30,6 +34,11 @@ int main()
         BST_LOG_ERROR(mLogger) << "an error message";
         BST_LOG_FATAL(mLogger) << "a fatal message";
     }
+
+    if (thd.joinable())
+        thd.join();
+
+
     return 0;
 }
 
