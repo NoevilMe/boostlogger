@@ -11,33 +11,32 @@ static logging::sources::severity_logger_mt<boost::log::trivial::severity_level>
 
 int main()
 {
-    init_file_logging("/home/wick/study/boostlogger/build/log4", "log_test", 3*1024*1024, 10);
+    init_file_logging("log5", "log_test", 3*1024*1024, 10);
     set_logging_level("trace");
 
-    BST_LOG_TRACE(mLogger) << "a trace message";
-    BST_LOG_DEBUG(mLogger) << "a debug message";
-    BST_LOG_INFO(mLogger) << "an info message";
-    BST_LOG_WARN(mLogger) << "a warning message";
-    BST_LOG_ERROR(mLogger) << "an error message";
-    BST_LOG_FATAL(mLogger) << "a fatal message";
+    LOG_TRACE(mLogger) << "a trace message";
+    LOG_DEBUG(mLogger) << "a debug message";
+    LOG_INFO(mLogger) << "an info message";
+    LOG_WARN(mLogger) << "a warning message";
+    LOG_ERROR(mLogger) << "an error message";
+    LOG_FATAL(mLogger) << "a fatal message";
 
     //set_logging_level(logging::trivial::info);
-    std::thread thd(&thread_log);
+    //std::thread thd(&thread_log);
     
 
-    int c =100000;
+    int c =1000000;
     while(c-- >0) {
-        BST_LOG_TRACE(mLogger) << "a trace message";
-        BST_LOG_DEBUG(mLogger) << "a debug message";
-        BST_LOG_INFO(mLogger) << "an info message";
-        BST_LOG_WARN(mLogger) << "a warning message";
-        BST_LOG_ERROR(mLogger) << "an error message";
-        BST_LOG_FATAL(mLogger) << "a fatal message";
+        LOG_TRACE(mLogger) << "a trace message";
+        LOG_DEBUG(mLogger) << "a debug message";
+        LOG_INFO(mLogger) << "an info message";
+        LOG_WARN(mLogger) << "a warning message";
+        LOG_ERROR(mLogger) << "an error message";
+        LOG_FATAL(mLogger) << "a fatal message";
     }
 
-    if (thd.joinable())
-        thd.join();
-
+    //if (thd.joinable())
+        //thd.join();
 
     return 0;
 }

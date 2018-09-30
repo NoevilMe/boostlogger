@@ -5,6 +5,6 @@ if [ ! -d build ]; then
 fi
 
 pushd build
-cmake ..
-make
+cmake .. -DUSE_BOOST_LAYOUT_VERSIONED=on -DLINK_AGAINST_STATIC_BOOST=on
+make VERBOSE=1
 popd

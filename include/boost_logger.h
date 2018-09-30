@@ -30,19 +30,19 @@ BOOST_LOG_INLINE_GLOBAL_LOGGER_DEFAULT(global_logger, boost::log::sources::sever
  * Severity Logging macros
  */
 #ifdef __LOGGING_FILE_LINE_
-#define BST_LOG_TRACE(lg) BOOST_LOG_SEV(lg, logging::trivial::trace) << __FILENAME__ << ":" << __LINE__ << " - "
-#define BST_LOG_DEBUG(lg) BOOST_LOG_SEV(lg, logging::trivial::debug) << __FILENAME__ << ":" << __LINE__ << " - "
-#define BST_LOG_INFO(lg) BOOST_LOG_SEV(lg, logging::trivial::info) << __FILENAME__ << ":" << __LINE__ << " - "
-#define BST_LOG_WARN(lg) BOOST_LOG_SEV(lg, logging::trivial::warning) << __FILENAME__ << ":" << __LINE__ << " - "
-#define BST_LOG_ERROR(lg) BOOST_LOG_SEV(lg, logging::trivial::error) << __FILENAME__ << ":" << __LINE__ << " - "
-#define BST_LOG_FATAL(lg) BOOST_LOG_SEV(lg, logging::trivial::fatal) << __FILENAME__ << ":" << __LINE__ << " - "
+#define LOG_TRACE(lg) BOOST_LOG_SEV(lg, logging::trivial::trace) << __FILENAME__ << ":" << __LINE__ << " - "
+#define LOG_DEBUG(lg) BOOST_LOG_SEV(lg, logging::trivial::debug) << __FILENAME__ << ":" << __LINE__ << " - "
+#define LOG_INFO(lg) BOOST_LOG_SEV(lg, logging::trivial::info) << __FILENAME__ << ":" << __LINE__ << " - "
+#define LOG_WARN(lg) BOOST_LOG_SEV(lg, logging::trivial::warning) << __FILENAME__ << ":" << __LINE__ << " - "
+#define LOG_ERROR(lg) BOOST_LOG_SEV(lg, logging::trivial::error) << __FILENAME__ << ":" << __LINE__ << " - "
+#define LOG_FATAL(lg) BOOST_LOG_SEV(lg, logging::trivial::fatal) << __FILENAME__ << ":" << __LINE__ << " - "
 #else
-#define BST_LOG_TRACE(lg) BOOST_LOG_SEV(lg, logging::trivial::trace)
-#define BST_LOG_DEBUG(lg) BOOST_LOG_SEV(lg, logging::trivial::debug)
-#define BST_LOG_INFO(lg) BOOST_LOG_SEV(lg, logging::trivial::info)
-#define BST_LOG_WARN(lg) BOOST_LOG_SEV(lg, logging::trivial::warning)
-#define BST_LOG_ERROR(lg) BOOST_LOG_SEV(lg, logging::trivial::error)
-#define BST_LOG_FATAL(lg) BOOST_LOG_SEV(lg, logging::trivial::fatal)
+#define LOG_TRACE(lg) BOOST_LOG_SEV(lg, logging::trivial::trace)
+#define LOG_DEBUG(lg) BOOST_LOG_SEV(lg, logging::trivial::debug)
+#define LOG_INFO(lg) BOOST_LOG_SEV(lg, logging::trivial::info)
+#define LOG_WARN(lg) BOOST_LOG_SEV(lg, logging::trivial::warning)
+#define LOG_ERROR(lg) BOOST_LOG_SEV(lg, logging::trivial::error)
+#define LOG_FATAL(lg) BOOST_LOG_SEV(lg, logging::trivial::fatal)
 #endif
 
 #endif
